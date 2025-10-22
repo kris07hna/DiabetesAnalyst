@@ -1,0 +1,22 @@
+{
+  "model_name": "XGBoost_20251022_215204",
+  "algorithm": "XGBoost",
+  "training_timestamp": "20251022_215226",
+  "metrics": {
+    "accuracy": 0.8494560075685903,
+    "precision": 0.8050592582781997,
+    "recall": 0.8494560075685903,
+    "f1_score": 0.8111739200988357,
+    "balanced_accuracy": 0.38724011718572066,
+    "matthews_corrcoef": 0.2554972993910735,
+    "roc_auc": 0.8208288281078835
+  },
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "random_state": 42
+  },
+  "platform": "Diabetes Risk Analysis Platform",
+  "dataset": "BRFSS 2015"
+}
