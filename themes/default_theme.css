@@ -1,0 +1,113 @@
+/* DiabeticsAI Enterprise - Custom Theme Template */
+/* Copy this template and modify colors to create your own theme */
+
+:root {
+    --primary-color: #1BD3CD;
+    --secondary-color: #09757A;
+    --background-color: #020024;
+    --text-color: #FFFFFF;
+    --accent-color: #6cc5eb;
+}
+
+/* Main Application Background */
+.stApp {
+    background: var(--background-color) !important;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(2,154,217,1) 84%, rgba(0,212,255,1) 100%) !important;
+    color: var(--text-color) !important;
+}
+
+/* Primary Buttons */
+.stButton > button[kind='primary'] {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button[kind='primary']:hover {
+    background: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(27, 211, 205, 0.4) !important;
+}
+
+/* Text Inputs */
+.stTextInput > div > div > input,
+.stSelectbox > div > div > select,
+.stNumberInput > div > div > input {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #000000 !important;
+    border: 2px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus,
+.stNumberInput > div > div > input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(27, 211, 205, 0.2) !important;
+}
+
+/* Tab Navigation */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    padding: 0.5rem !important;
+}
+
+.stTabs [data-baseweb="tab-list"] button {
+    background: transparent !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+
+.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+    background: #000000 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar */
+[data-testid='stSidebar'] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* Metrics */
+[data-testid='metric-container'] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(27, 211, 205, 0.3) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+}
+
+/* DataFrames */
+.stDataFrame {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.stDataFrame table {
+    background: rgba(255, 255, 255, 0.98) !important;
+    color: #000000 !important;
+}
+
+/* Headers */
+h1, .stMarkdown h1 {
+    color: var(--text-color) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+h2, h3, .stMarkdown h2, .stMarkdown h3 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Custom Color Variables for Easy Modification */
+/* To customize this theme, simply change the CSS custom properties at the top */
+/* Then save this file with a new name in the themes/ directory */
