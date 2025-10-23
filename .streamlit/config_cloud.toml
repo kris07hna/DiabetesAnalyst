@@ -1,4 +1,4 @@
-# Streamlit Configuration for Cloud Deployment
+# Streamlit Cloud Production Configuration
 [server]
 headless = true
 port = 8501
