@@ -244,7 +244,7 @@ class DashboardManager:
         ))
         
         fig.update_layout(height=300)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         
         # Quality metrics
         col1, col2 = st.columns(2)
@@ -291,7 +291,7 @@ class DashboardManager:
                 )
             )
             
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
             
             # Distribution stats
             total = len(df)
@@ -532,11 +532,11 @@ class DashboardManager:
             # Performance comparison chart
             st.markdown("#### 📊 Model Comparison")
             fig = self.ui.create_model_comparison_chart(performance_df)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
             
             # Performance table
             st.markdown("#### 📋 Detailed Performance Metrics")
-            st.dataframe(performance_df, use_container_width=True)
+            st.dataframe(performance_df, width="stretch")
             
             # Training time analysis
             st.markdown("#### ⏱️ Training Time Analysis")
@@ -557,7 +557,7 @@ class DashboardManager:
                 height=400
             )
             
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
     
     def render_analytics_dashboard(self):
         """Render analytics insights dashboard"""
@@ -592,7 +592,7 @@ class DashboardManager:
                 height=300
             )
             
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         with col2:
             # Missing data by column

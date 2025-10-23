@@ -15,9 +15,15 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import sys
+import os
 
 # Add modules to path
 sys.path.append(str(Path(__file__).parent))
+
+# Health check endpoint for cloud deployment
+if st.query_params.get("health") == "check":
+    st.write("OK")
+    st.stop()
 
 # Import all modules
 from modules.dashboard import DashboardManager
@@ -574,11 +580,17 @@ class DiabeticsAIEnterprise:
 def main():
     """Application entry point"""
     try:
+        # Add health check response for deployment platforms
+        if st.query_params and st.query_params.get('health') == 'check':
+            st.write("OK")
+            return
+            
         app = DiabeticsAIEnterprise()
         app.run()
     except Exception as e:
         st.error(f"Application Error: {e}")
         st.info("🔄 Please refresh the page to restart the application.")
+        st.stop()
 
 if __name__ == "__main__":
     main()

@@ -291,7 +291,7 @@ class ModelTrainer:
         
         with col2:
             st.markdown("**Quick Options:**")
-            if st.button("📊 Load Sample Data", use_container_width=True, key="load_sample_btn"):
+            if st.button("📊 Load Sample Data", width="stretch", key="load_sample_btn"):
                 self.load_sample_data()
     
     def auto_detect_target(self, df):
@@ -406,7 +406,7 @@ class ModelTrainer:
         st.markdown("---")
         
         # Training button
-        if st.button("🚀 Train All 4 Models", type="primary", use_container_width=True, key="btn_train_all_models"):
+        if st.button("🚀 Train All 4 Models", type="primary", width="stretch", key="btn_train_all_models"):
             self.execute_quick_train_all(df, selected_features, target_column, test_size, use_cv)
     
     def execute_quick_train_all(self, df, features, target, test_size, use_cv):
@@ -730,7 +730,7 @@ class ModelTrainer:
         st.markdown("---")
         
         # Train button
-        if st.button("🚀 Train Model", type="primary", use_container_width=True, key=f"btn_train_single_{model_key}"):
+        if st.button("🚀 Train Model", type="primary", width="stretch", key=f"btn_train_single_{model_key}"):
             self.execute_single_model_training(df, selected_features, target_column, model_key, test_size, use_cv, params if 'params' in locals() else {})
     
     def render_hyperparameters(self, model_key):
@@ -916,15 +916,15 @@ class ModelTrainer:
                 col1, col2, col3 = st.columns(3)
                 
                 with col1:
-                    if st.button("📥 Export", use_container_width=True, key=f"export_model_{model_name}"):
+                    if st.button("📥 Export", width="stretch", key=f"export_model_{model_name}"):
                         self.export_model(model_name, model_info)
                 
                 with col2:
-                    if st.button("📋 Details", use_container_width=True, key=f"details_model_{model_name}"):
+                    if st.button("📋 Details", width="stretch", key=f"details_model_{model_name}"):
                         st.json(model_info.get('parameters', {}))
                 
                 with col3:
-                    if st.button("🗑️ Delete", use_container_width=True, key=f"delete_model_{model_name}"):
+                    if st.button("🗑️ Delete", width="stretch", key=f"delete_model_{model_name}"):
                         self.delete_model(model_name)
                         st.rerun()
     

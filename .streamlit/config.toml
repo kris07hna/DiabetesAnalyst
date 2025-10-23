@@ -1,15 +1,25 @@
 [server]
 headless = true
-enableCORS = true
+enableCORS = false
 enableXsrfProtection = false
 port = 8501
 maxUploadSize = 200
 address = "0.0.0.0"
 enableStaticServing = false
+enableWebsocketCompression = false
+baseUrlPath = "/"
 
 [browser]
 gatherUsageStats = false
-serverAddress = "localhost"
+
+[client]
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[runner]
+magicEnabled = false
+installTracer = false
+fixMatplotlib = true
 
 [theme]
 primaryColor = "#667eea"

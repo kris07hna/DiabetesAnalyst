@@ -33,6 +33,10 @@ class GitHubModelUploader:
                 token = st.secrets['github']['token']
             except:
                 pass
+        
+        # Check if token is the template placeholder
+        if token == "your_github_token_here" or not token:
+            return None
         return token
     
     def _get_repo_name(self):

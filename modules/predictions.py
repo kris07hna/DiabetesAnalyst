@@ -241,7 +241,7 @@ class PredictionEngine:
                 height=400
             )
             
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
             
             # Confidence metrics
             probabilities_array = np.array(probabilities)
@@ -388,7 +388,7 @@ class PredictionEngine:
                 batch_df = pd.read_csv(uploaded_file)
                 
                 st.markdown("#### 📋 Data Preview")
-                st.dataframe(batch_df.head(), use_container_width=True)
+                st.dataframe(batch_df.head(), width="stretch")
                 
                 # Validate features
                 required_features = model_info.get('features', [])
@@ -504,7 +504,7 @@ class PredictionEngine:
                     'High Risk': 'red'
                 }
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         with col2:
             fig = px.bar(
@@ -518,11 +518,11 @@ class PredictionEngine:
                     'High Risk': 'red'
                 }
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         # Results table
         st.markdown("#### 📋 Detailed Results")
-        st.dataframe(predictions_df, use_container_width=True)
+        st.dataframe(predictions_df, width="stretch")
         
         # Download results
         csv = predictions_df.to_csv(index=False)
@@ -597,7 +597,7 @@ class PredictionEngine:
                 title="Prediction Activity Timeline"
             )
             
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         # Recent predictions
         st.markdown("#### 🕒 Recent Predictions")
@@ -686,7 +686,7 @@ class PredictionEngine:
                 # Display comparison
                 if comparison_results:
                     comparison_df = pd.DataFrame(comparison_results)
-                    st.dataframe(comparison_df, use_container_width=True)
+                    st.dataframe(comparison_df, width="stretch")
                     
                     # Visualization
                     if len(comparison_results) > 1:
@@ -696,4 +696,4 @@ class PredictionEngine:
                             y='Prediction',
                             title="Model Prediction Comparison"
                         )
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
